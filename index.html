@@ -1,0 +1,2013 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AccessTech Kenya — AI-Powered Inclusive Employment for Persons with Disabilities</title>
+    <meta name="description" content="AccessTech Kenya uses AI-driven job matching, accessible e-learning, and 3D-printed adaptive devices to connect Kenya's 2.2 million persons with disabilities to remote tech careers.">
+    <meta name="keywords" content="AccessTech Kenya, disability employment, inclusive technology, AI job matching, social business, Kenya, SDG, persons with disabilities">
+    <meta property="og:title" content="AccessTech Kenya — Empowering Inclusive Employment">
+    <meta property="og:description" content="AI-powered platform connecting persons with disabilities to tech careers across Africa.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mrlarry22.github.io/accesstechkenya">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+    <style>
+        /* ============================================
+           CSS CUSTOM PROPERTIES (Design Tokens)
+           ============================================ */
+        :root {
+            --teal-50: #e8f7f9;
+            --teal-100: #c5ecf0;
+            --teal-200: #8fd9e2;
+            --teal-300: #5ac5d3;
+            --teal-400: #1fb1c4;
+            --teal-500: #0A7E8C;
+            --teal-600: #086a76;
+            --teal-700: #065560;
+            --teal-800: #04414a;
+            --teal-900: #022c34;
+            
+            --orange-50: #fef6ee;
+            --orange-100: #fde8d3;
+            --orange-200: #fbd1a7;
+            --orange-300: #F4A261;
+            --orange-400: #e8913e;
+            --orange-500: #d97f2a;
+            --orange-600: #c06b1e;
+            --orange-700: #9e5518;
+            
+            --dark-900: #0a0f1a;
+            --dark-800: #111827;
+            --dark-700: #1f2937;
+            --dark-600: #374151;
+            --dark-500: #4b5563;
+            --dark-400: #6b7280;
+            --dark-300: #9ca3af;
+            --dark-200: #d1d5db;
+            --dark-100: #e5e7eb;
+            --dark-50: #f9fafb;
+            
+            --success: #10b981;
+            --success-light: #d1fae5;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            
+            --gradient-primary: linear-gradient(135deg, var(--teal-500) 0%, var(--teal-700) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--orange-300) 0%, var(--orange-500) 100%);
+            --gradient-hero: linear-gradient(135deg, #0a1628 0%, #0d2137 30%, #0a3040 60%, #062c35 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -2px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -4px rgba(0,0,0,0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.1);
+            --shadow-2xl: 0 25px 50px -12px rgba(0,0,0,0.25);
+            --shadow-glow-teal: 0 0 40px rgba(10,126,140,0.3);
+            --shadow-glow-orange: 0 0 40px rgba(244,162,97,0.3);
+            
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            --radius-2xl: 1.5rem;
+            --radius-full: 9999px;
+            
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-display: 'Space Grotesk', var(--font-sans);
+            
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* ============================================
+           RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        body {
+            font-family: var(--font-sans);
+            color: var(--dark-800);
+            background: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8125rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--teal-500);
+            margin-bottom: 1rem;
+            padding: 0.375rem 1rem;
+            background: var(--teal-50);
+            border-radius: var(--radius-full);
+            border: 1px solid var(--teal-100);
+        }
+        
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: var(--dark-900);
+            margin-bottom: 1rem;
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--dark-400);
+            max-width: 640px;
+            line-height: 1.7;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.875rem 2rem;
+            font-family: var(--font-sans);
+            font-size: 0.9375rem;
+            font-weight: 600;
+            border-radius: var(--radius-lg);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s var(--ease-spring);
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 14px rgba(10,126,140,0.4);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10,126,140,0.5);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--teal-500);
+            border: 2px solid var(--teal-200);
+        }
+        
+        .btn-outline:hover {
+            background: var(--teal-50);
+            border-color: var(--teal-500);
+            transform: translateY(-2px);
+        }
+        
+        .btn-white {
+            background: white;
+            color: var(--teal-700);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .btn-white:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: all 0.4s ease;
+        }
+        
+        .navbar.scrolled {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            padding: 0.625rem 0;
+        }
+        
+        .navbar .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+            transition: color 0.3s;
+        }
+        
+        .navbar.scrolled .nav-logo {
+            color: var(--dark-900);
+        }
+        
+        .nav-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 0.875rem;
+        }
+        
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.8);
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--orange-300);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .navbar.scrolled .nav-links a {
+            color: var(--dark-500);
+        }
+        
+        .navbar.scrolled .nav-links a:hover {
+            color: var(--teal-500);
+        }
+        
+        .nav-cta {
+            padding: 0.625rem 1.5rem !important;
+            background: var(--gradient-accent) !important;
+            color: white !important;
+            border-radius: var(--radius-lg) !important;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 14px rgba(244,162,97,0.3);
+            transition: all 0.3s var(--ease-spring) !important;
+        }
+        
+        .nav-cta::after { display: none !important; }
+        
+        .nav-cta:hover {
+            transform: translateY(-2px) !important;
+            box-shadow: 0 8px 25px rgba(244,162,97,0.4) !important;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .navbar.scrolled .mobile-menu-btn {
+            color: var(--dark-700);
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--gradient-hero);
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 20% 50%, rgba(10,126,140,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(244,162,97,0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at 60% 80%, rgba(10,126,140,0.08) 0%, transparent 50%);
+        }
+        
+        /* Animated grid background */
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                linear-gradient(rgba(10,126,140,0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(10,126,140,0.06) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridMove 20s linear infinite;
+        }
+        
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(60px, 60px); }
+        }
+        
+        /* Floating particles */
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            animation: float linear infinite;
+            opacity: 0;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) scale(0); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1); opacity: 0; }
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding-top: 6rem;
+            padding-bottom: 4rem;
+        }
+        
+        .hero-content {
+            color: white;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            background: rgba(244,162,97,0.15);
+            border: 1px solid rgba(244,162,97,0.3);
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--orange-300);
+            margin-bottom: 1.5rem;
+            animation: pulse-glow 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(244,162,97,0.2); }
+            50% { box-shadow: 0 0 20px 4px rgba(244,162,97,0.15); }
+        }
+        
+        .hero-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-title .highlight {
+            background: linear-gradient(135deg, var(--orange-300), var(--orange-500));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-description {
+            font-size: 1.125rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 2rem;
+            max-width: 520px;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .hero-stat {
+            text-align: center;
+            padding: 1.25rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-xl);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .hero-stat:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-4px);
+            border-color: var(--orange-300);
+        }
+        
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--orange-300);
+            display: block;
+        }
+        
+        .hero-stat-label {
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.25rem;
+        }
+        
+        /* Hero visual - right side */
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .hero-card {
+            position: relative;
+            width: 100%;
+            max-width: 480px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-2xl);
+            padding: 2.5rem;
+            backdrop-filter: blur(20px);
+            overflow: hidden;
+        }
+        
+        .hero-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(10,126,140,0.1), transparent, rgba(244,162,97,0.1), transparent);
+            animation: rotate 10s linear infinite;
+        }
+        
+        @keyframes rotate {
+            100% { transform: rotate(360deg); }
+        }
+        
+        .hero-card-inner {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-card-icon {
+            width: 72px;
+            height: 72px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-glow-teal);
+        }
+        
+        .hero-card-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-card-features {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.875rem;
+        }
+        
+        .hero-card-features li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.75);
+        }
+        
+        .hero-card-features li i {
+            color: var(--success);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .hero-card-metric {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.25rem;
+            background: rgba(10,126,140,0.2);
+            border-radius: var(--radius-lg);
+            margin-top: 1.5rem;
+        }
+        
+        .hero-card-metric span:first-child {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .hero-card-metric span:last-child {
+            font-family: var(--font-display);
+            font-weight: 700;
+            color: var(--orange-300);
+            font-size: 1.125rem;
+        }
+
+        /* ============================================
+           SOCIAL PROOF BAR
+           ============================================ */
+        .proof-bar {
+            background: var(--dark-50);
+            border-top: 1px solid var(--dark-100);
+            border-bottom: 1px solid var(--dark-100);
+            padding: 2rem 0;
+        }
+        
+        .proof-bar .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+        
+        .proof-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--dark-400);
+            font-size: 0.9375rem;
+            font-weight: 500;
+        }
+        
+        .proof-icon {
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* ============================================
+           PROBLEM SECTION
+           ============================================ */
+        .problem {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .problem-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .problem-header .section-subtitle {
+            margin: 0 auto;
+        }
+        
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+        
+        .problem-card {
+            position: relative;
+            padding: 2rem;
+            background: var(--dark-50);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--dark-100);
+            transition: all 0.4s var(--ease-spring);
+            overflow: hidden;
+        }
+        
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-accent);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--orange-200);
+        }
+        
+        .problem-card:hover::before {
+            opacity: 1;
+        }
+        
+        .problem-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--orange-50);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--orange-500);
+            margin-bottom: 1.25rem;
+        }
+        
+        .problem-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--dark-900);
+            margin-bottom: 0.75rem;
+        }
+        
+        .problem-card p {
+            font-size: 0.9375rem;
+            color: var(--dark-400);
+            line-height: 1.7;
+        }
+        
+        .problem-stat {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            margin-top: 1rem;
+            padding: 0.375rem 0.75rem;
+            background: rgba(239,68,68,0.08);
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--error);
+        }
+
+        /* ============================================
+           SOLUTION SECTION
+           ============================================ */
+        .solution {
+            padding: 6rem 0;
+            background: var(--dark-900);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solution::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(ellipse at 30% 0%, rgba(10,126,140,0.15) 0%, transparent 60%),
+                radial-gradient(ellipse at 70% 100%, rgba(244,162,97,0.1) 0%, transparent 50%);
+        }
+        
+        .solution .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .solution-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .solution-header .section-label {
+            background: rgba(10,126,140,0.2);
+            border-color: rgba(10,126,140,0.3);
+        }
+        
+        .solution-header .section-title {
+            color: white;
+        }
+        
+        .solution-header .section-subtitle {
+            color: rgba(255,255,255,0.6);
+            margin: 0 auto;
+        }
+        
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .pillar {
+            padding: 2rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: var(--radius-xl);
+            transition: all 0.4s ease;
+        }
+        
+        .pillar:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: var(--teal-400);
+            transform: translateY(-4px);
+        }
+        
+        .pillar-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-md);
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .pillar h3 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .pillar p {
+            font-size: 0.9375rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.7;
+        }
+        
+        .pillar-highlight {
+            display: inline-flex;
+            padding: 0.25rem 0.625rem;
+            background: rgba(244,162,97,0.15);
+            border-radius: var(--radius-sm);
+            font-size: 0.8125rem;
+            font-weight: 600;
+            color: var(--orange-300);
+            margin-top: 1rem;
+        }
+
+        /* ============================================
+           IMPACT / STATS SECTION
+           ============================================ */
+        .impact {
+            padding: 6rem 0;
+            background: linear-gradient(180deg, #f0fdfa 0%, white 100%);
+        }
+        
+        .impact-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .impact-header .section-subtitle {
+            margin: 0 auto;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            background: white;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--dark-100);
+            box-shadow: var(--shadow-md);
+            transition: all 0.4s var(--ease-spring);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--teal-500);
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9375rem;
+            font-weight: 500;
+            color: var(--dark-500);
+        }
+        
+        .stat-detail {
+            font-size: 0.8125rem;
+            color: var(--dark-300);
+            margin-top: 0.375rem;
+        }
+
+        /* SDG Section */
+        .sdg-section {
+            padding: 3rem 0 0;
+        }
+        
+        .sdg-title {
+            text-align: center;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--dark-800);
+            margin-bottom: 2rem;
+        }
+        
+        .sdg-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1rem;
+        }
+        
+        .sdg-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            border-radius: var(--radius-xl);
+            transition: all 0.3s var(--ease-spring);
+        }
+        
+        .sdg-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        .sdg-number {
+            font-family: var(--font-display);
+            font-weight: 800;
+            font-size: 2rem;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+        
+        .sdg-name {
+            font-size: 0.8125rem;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        .sdg-4 { background: #c5192d15; }
+        .sdg-4 .sdg-number { color: #c5192d; }
+        .sdg-4 .sdg-name { color: #c5192d; }
+        
+        .sdg-8 { background: #a2195215; }
+        .sdg-8 .sdg-number { color: #a21952; }
+        .sdg-8 .sdg-name { color: #a21952; }
+        
+        .sdg-9 { background: #fd6a2515; }
+        .sdg-9 .sdg-number { color: #fd6a25; }
+        .sdg-9 .sdg-name { color: #fd6a25; }
+        
+        .sdg-10 { background: #dd138515; }
+        .sdg-10 .sdg-number { color: #dd1385; }
+        .sdg-10 .sdg-name { color: #dd1385; }
+        
+        .sdg-17 { background: #19486a15; }
+        .sdg-17 .sdg-number { color: #19486a; }
+        .sdg-17 .sdg-name { color: #19486a; }
+
+        /* ============================================
+           BUSINESS MODEL SECTION
+           ============================================ */
+        .business-model {
+            padding: 6rem 0;
+            background: white;
+        }
+        
+        .bm-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .bm-header .section-subtitle {
+            margin: 0 auto;
+        }
+        
+        .revenue-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .revenue-card {
+            padding: 1.75rem;
+            background: var(--dark-50);
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--dark-100);
+            text-align: center;
+            transition: all 0.3s var(--ease-spring);
+        }
+        
+        .revenue-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--teal-200);
+        }
+        
+        .revenue-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--teal-50);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--teal-500);
+            margin: 0 auto 1rem;
+        }
+        
+        .revenue-card h4 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-800);
+            margin-bottom: 0.375rem;
+        }
+        
+        .revenue-card p {
+            font-size: 0.8125rem;
+            color: var(--dark-400);
+        }
+        
+        .revenue-pct {
+            display: block;
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--teal-500);
+            margin-top: 0.75rem;
+        }
+        
+        /* Timeline */
+        .timeline-section {
+            background: var(--dark-50);
+            border-radius: var(--radius-2xl);
+            padding: 3rem;
+        }
+        
+        .timeline-title {
+            font-family: var(--font-display);
+            font-size: 1.375rem;
+            font-weight: 600;
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .timeline {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            padding: 0 1rem;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            left: 3rem;
+            right: 3rem;
+            height: 3px;
+            background: var(--dark-200);
+        }
+        
+        .timeline-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+        
+        .timeline-dot {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 0.875rem;
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .timeline-item:nth-child(1) .timeline-dot { background: var(--teal-500); }
+        .timeline-item:nth-child(2) .timeline-dot { background: var(--teal-400); }
+        .timeline-item:nth-child(3) .timeline-dot { background: var(--orange-300); }
+        .timeline-item:nth-child(4) .timeline-dot { background: var(--orange-500); }
+        
+        .timeline-item h4 {
+            font-size: 0.9375rem;
+            font-weight: 600;
+            color: var(--dark-800);
+            margin-bottom: 0.25rem;
+        }
+        
+        .timeline-item p {
+            font-size: 0.8125rem;
+            color: var(--dark-400);
+            max-width: 180px;
+        }
+
+        /* ============================================
+           FOUNDER SECTION
+           ============================================ */
+        .founder {
+            padding: 6rem 0;
+            background: var(--dark-900);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .founder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 70% 50%, rgba(244,162,97,0.1) 0%, transparent 50%);
+        }
+        
+        .founder .container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .founder-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .founder-avatar {
+            width: 200px;
+            height: 200px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-display);
+            font-size: 4rem;
+            font-weight: 800;
+            color: white;
+            margin-bottom: 1.5rem;
+            box-shadow: var(--shadow-glow-teal);
+            position: relative;
+        }
+        
+        .founder-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -6px;
+            border-radius: 50%;
+            border: 2px solid rgba(10,126,140,0.3);
+            animation: pulse-ring 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-ring {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.5; }
+        }
+        
+        .founder-credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            justify-content: center;
+        }
+        
+        .credential {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.375rem;
+            padding: 0.375rem 0.875rem;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-full);
+            font-size: 0.8125rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .credential i { color: var(--orange-300); }
+        
+        .founder-content .section-label {
+            background: rgba(10,126,140,0.2);
+            border-color: rgba(10,126,140,0.3);
+        }
+        
+        .founder-content .section-title {
+            color: white;
+        }
+        
+        .founder-quote {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--orange-300);
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--orange-300);
+            line-height: 1.7;
+        }
+        
+        .founder-text {
+            font-size: 1rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+        
+        .founder-achievements {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .achievement {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: rgba(255,255,255,0.04);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(255,255,255,0.06);
+        }
+        
+        .achievement i {
+            color: var(--success);
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+        
+        .achievement-text {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.7);
+        }
+        
+        .achievement-text strong {
+            color: white;
+            display: block;
+            margin-bottom: 0.125rem;
+        }
+
+        /* ============================================
+           CTA SECTION
+           ============================================ */
+        .cta {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--teal-500) 0%, var(--teal-700) 50%, var(--dark-800) 100%);
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 50% 50%, rgba(244,162,97,0.1) 0%, transparent 60%);
+        }
+        
+        .cta .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cta .section-title {
+            color: white;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+        }
+        
+        .cta .section-subtitle {
+            color: rgba(255,255,255,0.7);
+            margin: 0 auto 2.5rem;
+            max-width: 550px;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: var(--dark-900);
+            color: rgba(255,255,255,0.5);
+            padding: 3rem 0 2rem;
+        }
+        
+        .footer .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-family: var(--font-display);
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: white;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            font-size: 0.875rem;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--orange-300);
+        }
+        
+        .footer-sdg {
+            font-size: 0.8125rem;
+            text-align: center;
+            max-width: 500px;
+            line-height: 1.6;
+        }
+        
+        .footer-copy {
+            font-size: 0.8125rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.08);
+            width: 100%;
+            text-align: center;
+        }
+
+        /* ============================================
+           RESPONSIVE DESIGN
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            .hero-description { margin: 0 auto 2rem; }
+            .hero-buttons { justify-content: center; }
+            .hero-visual { display: none; }
+            .problem-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .revenue-grid { grid-template-columns: repeat(2, 1fr); }
+            .sdg-grid { grid-template-columns: repeat(3, 1fr); }
+            .founder .container { grid-template-columns: 1fr; text-align: center; }
+            .founder-content { text-align: left; }
+            .founder-quote { text-align: left; }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .mobile-menu-btn { display: block; }
+            .problem-grid { grid-template-columns: 1fr; }
+            .pillars { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr 1fr; }
+            .revenue-grid { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: 1fr 1fr 1fr; gap: 0.75rem; }
+            .hero-stat { padding: 0.75rem; }
+            .hero-stat-number { font-size: 1.25rem; }
+            .sdg-grid { grid-template-columns: repeat(2, 1fr); }
+            .timeline { flex-direction: column; gap: 1.5rem; align-items: flex-start; }
+            .timeline::before { display: none; }
+            .timeline-item { flex-direction: row; text-align: left; }
+            .timeline-dot { margin-bottom: 0; margin-right: 1rem; flex-shrink: 0; }
+            .founder-achievements { grid-template-columns: 1fr; }
+            .proof-bar .container { gap: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-stats { grid-template-columns: 1fr; }
+            .stats-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ============================================
+           ACCESSIBILITY
+           ============================================ */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            html { scroll-behavior: auto; }
+        }
+        
+        :focus-visible {
+            outline: 3px solid var(--teal-500);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="container">
+            <a href="#" class="nav-logo" aria-label="AccessTech Kenya Home">
+                <div class="nav-logo-icon" aria-hidden="true">ATK</div>
+                <span>AccessTech Kenya</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#solution">Our Solution</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#model">Business Model</a></li>
+                <li><a href="#founder">Founder</a></li>
+                <li><a href="#support" class="nav-cta">Support Us</a></li>
+            </ul>
+            <button class="mobile-menu-btn" aria-label="Toggle menu" onclick="toggleMenu()">
+                <i data-lucide="menu" style="width:24px;height:24px;"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="home">
+        <div class="hero-grid" aria-hidden="true"></div>
+        <div class="hero-particles" aria-hidden="true" id="particles"></div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i data-lucide="award" style="width:16px;height:16px;"></i>
+                    Oxford Innovation Seed Fund Award Winner
+                </div>
+                
+                <h1 class="hero-title">
+                    Turning Disability Into<br>
+                    <span class="highlight">Africa's Tech Advantage</span>
+                </h1>
+                
+                <p class="hero-description">
+                    AI-powered inclusive employment platform connecting Kenya's 2.2 million persons with disabilities to remote tech careers — proving that disability is not inability, but untapped potential.
+                </p>
+                
+                <div class="hero-buttons">
+                    <a href="#solution" class="btn btn-primary">
+                        <i data-lucide="play-circle" style="width:18px;height:18px;"></i>
+                        See How It Works
+                    </a>
+                    <a href="#support" class="btn btn-outline" style="color: white; border-color: rgba(255,255,255,0.3);">
+                        <i data-lucide="heart" style="width:18px;height:18px;"></i>
+                        Support Our Mission
+                    </a>
+                </div>
+                
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number" data-count="2200000">2.2M</span>
+                        <span class="hero-stat-label">PWDs in Kenya</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">&lt;5%</span>
+                        <span class="hero-stat-label">Currently Employed</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">20K+</span>
+                        <span class="hero-stat-label">Unfilled Tech Jobs</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual" data-aos="fade-left" data-aos-delay="300">
+                <div class="hero-card">
+                    <div class="hero-card-inner">
+                        <div class="hero-card-icon">
+                            <i data-lucide="brain-circuit" style="width:32px;height:32px;color:white;"></i>
+                        </div>
+                        <h2 class="hero-card-title">Our 4-Pillar Solution</h2>
+                        <ul class="hero-card-features">
+                            <li>
+                                <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                                <span>AI-powered accessible e-learning platform (WCAG 2.1 AA)</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                                <span>Smart job-matching engine with bias mitigation</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                                <span>3D-printed adaptive devices at 85% cost savings</span>
+                            </li>
+                            <li>
+                                <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                                <span>Employer partnerships with inclusion training</span>
+                            </li>
+                        </ul>
+                        <div class="hero-card-metric">
+                            <span>Cost per job placement</span>
+                            <span>$243</span>
+                        </div>
+                        <div class="hero-card-metric" style="margin-top:0.75rem;">
+                            <span>vs. Government programs</span>
+                            <span>8× cheaper</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF BAR ========== -->
+    <section class="proof-bar" aria-label="Recognition and partnerships">
+        <div class="container">
+            <div class="proof-item">
+                <div class="proof-icon"><i data-lucide="graduation-cap" style="width:22px;height:22px;color:#0A7E8C;"></i></div>
+                <span>Oxford University Innovation</span>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon"><i data-lucide="trophy" style="width:22px;height:22px;color:#F4A261;"></i></div>
+                <span>£5,000 ISF Award Winner</span>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon"><i data-lucide="rocket" style="width:22px;height:22px;color:#0A7E8C;"></i></div>
+                <span>OUI Phase 2 Incubator</span>
+            </div>
+            <div class="proof-item">
+                <div class="proof-icon"><i data-lucide="users" style="width:22px;height:22px;color:#F4A261;"></i></div>
+                <span>87% Pilot Satisfaction</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROBLEM SECTION ========== -->
+    <section class="problem" id="problem">
+        <div class="container">
+            <div class="problem-header" data-aos="fade-up">
+                <div class="section-label">
+                    <i data-lucide="alert-triangle" style="width:14px;height:14px;"></i>
+                    The Crisis
+                </div>
+                <h2 class="section-title">The Triple Exclusion Trapping<br>2.2 Million Kenyans</h2>
+                <p class="section-subtitle">Africa's largest untapped workforce is locked out of the continent's fastest-growing industry.</p>
+            </div>
+            
+            <div class="problem-grid">
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="problem-icon">
+                        <i data-lucide="map-pin-off" style="width:28px;height:28px;"></i>
+                    </div>
+                    <h3>Physical Barriers</h3>
+                    <p>In Nairobi's informal settlements, a person with contractures spends 3+ hours commuting to jobs non-disabled residents reach in 45 minutes. Unpaved paths, inaccessible transport, and workplaces without ramps make traditional employment economically unviable.</p>
+                    <div class="problem-stat">
+                        <i data-lucide="trending-down" style="width:14px;height:14px;"></i>
+                        3× longer commutes
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="problem-icon">
+                        <i data-lucide="laptop-minimal" style="width:28px;height:28px;"></i>
+                    </div>
+                    <h3>Skills-Opportunity Mismatch</h3>
+                    <p>Kenya's "Silicon Savannah" — 200+ companies valued at $1+ billion — faces 20,000+ unfilled tech roles. Yet under 1% of persons with disabilities access technical training. Existing programs are physically inaccessible and cost KES 150,000–300,000.</p>
+                    <div class="problem-stat">
+                        <i data-lucide="trending-down" style="width:14px;height:14px;"></i>
+                        &lt;1% PWDs in tech training
+                    </div>
+                </div>
+                
+                <div class="problem-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="problem-icon">
+                        <i data-lucide="user-x" style="width:28px;height:28px;"></i>
+                    </div>
+                    <h3>Systemic Discrimination</h3>
+                    <p>82% of Kenyan employers won't interview qualified PWD candidates, citing "productivity concerns." Digital job platforms lack accessibility — AI screening algorithms filter out employment gaps common in PWD resumes.</p>
+                    <div class="problem-stat">
+                        <i data-lucide="trending-down" style="width:14px;height:14px;"></i>
+                        82% employer rejection rate
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOLUTION SECTION ========== -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <div class="solution-header" data-aos="fade-up">
+                <div class="section-label">
+                    <i data-lucide="lightbulb" style="width:14px;height:14px;"></i>
+                    Our Solution
+                </div>
+                <h2 class="section-title">Four Pillars of<br>Inclusive Employment</h2>
+                <p class="section-subtitle">A comprehensive approach that transforms both the supply side (PWD skills) and demand side (employer practices) simultaneously.</p>
+            </div>
+            
+            <div class="pillars">
+                <div class="pillar" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pillar-number">1</div>
+                    <h3>Accessible Training Platform</h3>
+                    <p>AI-powered e-learning built WCAG 2.1 AA compliant from ground up — not retrofitted. Three tracks: Software Development (Python, HTML/CSS/JS), Digital Freelancing (Upwork/Fiverr), and Specialized Tech (data analysis, digital marketing).</p>
+                    <span class="pillar-highlight">70% async + 30% in-person labs</span>
+                </div>
+                
+                <div class="pillar" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pillar-number">2</div>
+                    <h3>AI Job-Matching Engine</h3>
+                    <p>Machine learning algorithm trained on 500+ remote tech jobs, matching users by disability type, accommodation needs, skills, and preferences. Bias mitigation removes disability discrimination from recommendations.</p>
+                    <span class="pillar-highlight">World's first disability-aware job AI</span>
+                </div>
+                
+                <div class="pillar" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pillar-number">3</div>
+                    <h3>3D-Printed Adaptive Devices</h3>
+                    <p>Custom ergonomic peripherals — one-handed keyboards, foot-operated mice, trackball alternatives — at KES 2,000 ($15) vs. commercial KES 15,000 ($115). Designed from lived experience.</p>
+                    <span class="pillar-highlight">85% cost savings</span>
+                </div>
+                
+                <div class="pillar" data-aos="fade-up" data-aos-delay="400">
+                    <div class="pillar-number">4</div>
+                    <h3>Employer Partnerships</h3>
+                    <p>"Try Before You Buy" subsidized internships (50% salary co-funded) converting to full employment. Corporate disability inclusion training and quota compliance support for Kenya's 5% PWD hiring mandate.</p>
+                    <span class="pillar-highlight">Solving both sides of the equation</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== IMPACT SECTION ========== -->
+    <section class="impact" id="impact">
+        <div class="container">
+            <div class="impact-header" data-aos="fade-up">
+                <div class="section-label">
+                    <i data-lucide="bar-chart-3" style="width:14px;height:14px;"></i>
+                    Measurable Impact
+                </div>
+                <h2 class="section-title">Impact That Counts —<br>In Numbers</h2>
+                <p class="section-subtitle">Every metric represents a life transformed, a family lifted from poverty, a stereotype shattered.</p>
+            </div>
+            
+            <div class="stats-grid">
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="stat-number">200</div>
+                    <div class="stat-label">PWDs Trained (Year 1)</div>
+                    <div class="stat-detail">Software dev, freelancing, data analysis</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="stat-number">3–8×</div>
+                    <div class="stat-label">Income Increase</div>
+                    <div class="stat-detail">KES 5,000 → KES 30,000–80,000/mo</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="stat-number">$243</div>
+                    <div class="stat-label">Cost Per Placement</div>
+                    <div class="stat-detail">8× cheaper than government programs</div>
+                </div>
+                <div class="stat-card" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="stat-number">67×</div>
+                    <div class="stat-label">Return on Investment</div>
+                    <div class="stat-detail">Taxes, welfare savings, spending</div>
+                </div>
+            </div>
+            
+            <!-- SDGs -->
+            <div class="sdg-section" data-aos="fade-up">
+                <h3 class="sdg-title">Contributing to the UN Sustainable Development Goals</h3>
+                <div class="sdg-grid">
+                    <div class="sdg-card sdg-4">
+                        <div class="sdg-number">4</div>
+                        <div class="sdg-name">Quality Education</div>
+                    </div>
+                    <div class="sdg-card sdg-8">
+                        <div class="sdg-number">8</div>
+                        <div class="sdg-name">Decent Work &<br>Economic Growth</div>
+                    </div>
+                    <div class="sdg-card sdg-9">
+                        <div class="sdg-number">9</div>
+                        <div class="sdg-name">Industry, Innovation<br>& Infrastructure</div>
+                    </div>
+                    <div class="sdg-card sdg-10">
+                        <div class="sdg-number">10</div>
+                        <div class="sdg-name">Reduced<br>Inequalities</div>
+                    </div>
+                    <div class="sdg-card sdg-17">
+                        <div class="sdg-number">17</div>
+                        <div class="sdg-name">Partnerships for<br>the Goals</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BUSINESS MODEL SECTION ========== -->
+    <section class="business-model" id="model">
+        <div class="container">
+            <div class="bm-header" data-aos="fade-up">
+                <div class="section-label">
+                    <i data-lucide="trending-up" style="width:14px;height:14px;"></i>
+                    Financial Sustainability
+                </div>
+                <h2 class="section-title">A Social Business That<br>Sustains Itself</h2>
+                <p class="section-subtitle">100% profit reinvestment model aligned with Professor Yunus's social business principles. Break-even at Month 8.</p>
+            </div>
+            
+            <div class="revenue-grid">
+                <div class="revenue-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="revenue-icon">
+                        <i data-lucide="handshake" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h4>Placement Fees</h4>
+                    <p>10% commission on first 3 months of earnings</p>
+                    <span class="revenue-pct">35%</span>
+                </div>
+                <div class="revenue-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="revenue-icon">
+                        <i data-lucide="presentation" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h4>Corporate Training</h4>
+                    <p>B2B disability inclusion workshops</p>
+                    <span class="revenue-pct">30%</span>
+                </div>
+                <div class="revenue-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="revenue-icon">
+                        <i data-lucide="badge-check" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h4>Certifications</h4>
+                    <p>NITA-accredited tech certificates</p>
+                    <span class="revenue-pct">20%</span>
+                </div>
+                <div class="revenue-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="revenue-icon">
+                        <i data-lucide="cog" style="width:24px;height:24px;"></i>
+                    </div>
+                    <h4>Adaptive Devices</h4>
+                    <p>3D-printed assistive tech sales</p>
+                    <span class="revenue-pct">15%</span>
+                </div>
+            </div>
+            
+            <!-- Scaling Timeline -->
+            <div class="timeline-section" data-aos="fade-up">
+                <h3 class="timeline-title">🚀 Scaling Roadmap</h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">Y1</div>
+                        <div>
+                            <h4>Proof of Concept</h4>
+                            <p>Nairobi pilot — 200 PWDs trained, 40% placement rate, break-even Month 8</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">Y2</div>
+                        <div>
+                            <h4>National Growth</h4>
+                            <p>4 Kenyan cities — 500 annual graduates, $91K revenue, self-sustaining</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">Y3</div>
+                        <div>
+                            <h4>Continental</h4>
+                            <p>5 African countries, open-source platform, $215K revenue</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">Y5</div>
+                        <div>
+                            <h4>Vision 2030</h4>
+                            <p>10 countries, 50,000 PWDs empowered — making ourselves unnecessary</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOUNDER SECTION ========== -->
+    <section class="founder" id="founder">
+        <div class="container">
+            <div class="founder-visual" data-aos="fade-right">
+                <div class="founder-avatar" aria-label="Paul Lawrence">PL</div>
+                <div class="founder-credentials">
+                    <span class="credential"><i data-lucide="graduation-cap" style="width:14px;height:14px;"></i> BSc Computer Science</span>
+                    <span class="credential"><i data-lucide="trophy" style="width:14px;height:14px;"></i> Oxford ISF Winner</span>
+                    <span class="credential"><i data-lucide="heart" style="width:14px;height:14px;"></i> Person with Disability</span>
+                    <span class="credential"><i data-lucide="code" style="width:14px;height:14px;"></i> Full-Stack Developer</span>
+                </div>
+            </div>
+            
+            <div class="founder-content" data-aos="fade-left">
+                <div class="section-label">
+                    <i data-lucide="user" style="width:14px;height:14px;"></i>
+                    Meet the Founder
+                </div>
+                <h2 class="section-title">Paul Lawrence</h2>
+                
+                <blockquote class="founder-quote">
+                    "The 12× income gap between me and my disabled neighbors is unacceptable. I'm going to close it."
+                </blockquote>
+                
+                <p class="founder-text">
+                    I don't just build for persons with disabilities — I AM a person with disability. My contractures affect my joints and mobility daily. Every feature in AccessTech Kenya comes from lived experience: the keyboard shortcuts that reduce wrist strain exist because I NEED them.
+                </p>
+                
+                <p class="founder-text">
+                    When 12 persons with disabilities couldn't access my first digital literacy program's 2nd-floor venue — that failure planted AccessTech's seed. I converted personal adversity into systemic solutions.
+                </p>
+                
+                <div class="founder-achievements">
+                    <div class="achievement">
+                        <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                        <div class="achievement-text">
+                            <strong>Oxford Award Winner</strong>
+                            £5,000 Innovation Seed Fund
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                        <div class="achievement-text">
+                            <strong>Kibra Digital Hubs</strong>
+                            Trained 60 youth in digital literacy
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                        <div class="achievement-text">
+                            <strong>Community Research</strong>
+                            32 interviews + 8 focus groups with PWDs
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <i data-lucide="check-circle-2" style="width:18px;height:18px;"></i>
+                        <div class="achievement-text">
+                            <strong>KNPPD Member</strong>
+                            Insider trust within disability community
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CTA SECTION ========== -->
+    <section class="cta" id="support">
+        <div class="container" data-aos="zoom-in">
+            <h2 class="section-title">Disability Is Not Inability.<br>It's Untapped Potential.</h2>
+            <p class="section-subtitle">Join us in building Africa's most inclusive tech workforce. Every partnership, investment, and connection accelerates systemic change.</p>
+            <div class="cta-buttons">
+                <a href="mailto:accesstechkenya@gmail.com" class="btn btn-white">
+                    <i data-lucide="mail" style="width:18px;height:18px;"></i>
+                    Partner With Us
+                </a>
+                <a href="https://socialbusinessearth.org" class="btn btn-outline" style="color:white;border-color:rgba(255,255,255,0.4);" target="_blank" rel="noopener">
+                    <i data-lucide="external-link" style="width:18px;height:18px;"></i>
+                    Social Business Earth
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-logo">
+                <div class="nav-logo-icon" aria-hidden="true">ATK</div>
+                <span>AccessTech Kenya</span>
+            </div>
+            <ul class="footer-links">
+                <li><a href="#problem">The Problem</a></li>
+                <li><a href="#solution">Solution</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#model">Business Model</a></li>
+                <li><a href="#founder">Founder</a></li>
+                <li><a href="mailto:accesstechkenya@gmail.com">Contact</a></li>
+            </ul>
+            <p class="footer-sdg">
+                Contributing to UN SDGs: Quality Education (4) · Decent Work (8) · Industry & Innovation (9) · Reduced Inequalities (10) · Partnerships (17)
+            </p>
+            <p class="footer-copy">
+                &copy; 2026 AccessTech Kenya. A social business — 100% of profits reinvested into impact.<br>
+                Guided by the social business principles of Nobel Peace Laureate Professor Muhammad Yunus.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ========== SCRIPTS ========== -->
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+        
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 80
+        });
+        
+        // Navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+        
+        // Generate particles
+        function createParticles() {
+            const container = document.getElementById('particles');
+            if (!container) return;
+            const colors = ['rgba(10,126,140,0.4)', 'rgba(244,162,97,0.3)', 'rgba(255,255,255,0.1)'];
+            
+            for (let i = 0; i < 30; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                const size = Math.random() * 4 + 2;
+                particle.style.cssText = `
+                    width: ${size}px;
+                    height: ${size}px;
+                    background: ${colors[Math.floor(Math.random() * colors.length)]};
+                    left: ${Math.random() * 100}%;
+                    animation-duration: ${Math.random() * 15 + 10}s;
+                    animation-delay: ${Math.random() * 10}s;
+                `;
+                container.appendChild(particle);
+            }
+        }
+        createParticles();
+        
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        function toggleMenu() {
+            const links = document.querySelector('.nav-links');
+            if (links.style.display === 'flex') {
+                links.style.display = 'none';
+            } else {
+                links.style.display = 'flex';
+                links.style.flexDirection = 'column';
+                links.style.position = 'absolute';
+                links.style.top = '100%';
+                links.style.left = '0';
+                links.style.right = '0';
+                links.style.background = 'rgba(255,255,255,0.98)';
+                links.style.padding = '1.5rem';
+                links.style.gap = '1rem';
+                links.style.borderRadius = '0 0 1rem 1rem';
+                links.style.boxShadow = '0 10px 25px rgba(0,0,0,0.1)';
+                // Update link colors for mobile
+                links.querySelectorAll('a:not(.nav-cta)').forEach(a => {
+                    a.style.color = '#374151';
+                });
+            }
+        }
+        
+        // Counter animation for stats
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const text = el.textContent;
+                        // Simple emphasis animation
+                        el.style.transform = 'scale(1.1)';
+                        el.style.transition = 'transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)';
+                        setTimeout(() => { el.style.transform = 'scale(1)'; }, 500);
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            counters.forEach(counter => observer.observe(counter));
+        }
+        animateCounters();
+    </script>
+</body>
+</html>
